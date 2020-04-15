@@ -17,7 +17,7 @@ class FetchCog(commands.Cog):
                 await ctx.send("name of the bike is a required argument")
         else:
             # do something
-            request_url = "http://127.0.0.1:5000/bike/specs/" + model_name
+            request_url = "http://127.0.0.1:5000/bike/specs_by_name/" + model_name
             resp = requests.get(request_url)
             if resp.status_code != 200:
                 async with ctx.channel.typing():
